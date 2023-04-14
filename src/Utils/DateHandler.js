@@ -1,8 +1,8 @@
 import { today } from "../Data/Constants";
 
 export const DateDifferenceFormater = (actualDate, targetDate) => { //Recibe valor numerico
-    const date1 = new Date (actualDate);
-    const date2 = new Date (targetDate);
+    const date1 =  (actualDate);
+    const date2 =  (targetDate);
     if (actualDate >= targetDate) { 
         return {days:0,hours:0,minutes:0,seconds:0}
     }
@@ -44,7 +44,7 @@ export const GetNextHoraSalida = (actualDate) => {
 }
 
 export const GetNextQuincena = (actualDate) => { //Recibe un valor numerico y retorna un valor numerico
-    const actual = new Date(today);
+    let actual = new Date(today);
     const actualDayNumber = actual.getDate()
     const actualMonth = actual.getMonth() + 1
     let nextQuincena = actual;
@@ -63,5 +63,6 @@ export const GetNextQuincena = (actualDate) => { //Recibe un valor numerico y re
         if (nextQuincena.getDay() === 0 && actualDayNumber < nextQuincena.getDate() - 1) {
             nextQuincena = new Date (actual.getFullYear()+'-'+actualMonth+'-'+(nextQuincena.getDate() + 1) + ' 03:00:00')
         }
+        actual = null;
     return nextQuincena.getTime();
 }
