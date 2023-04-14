@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Temporizador",
+  "name": "Temporizadores  y cronometros para sentir la presión del tiempo",
   "icons": [
     {
       "src": "favicon.ico",

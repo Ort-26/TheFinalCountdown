@@ -1,0 +1,1 @@
+export const today =  (Date.now() - 3600000);
