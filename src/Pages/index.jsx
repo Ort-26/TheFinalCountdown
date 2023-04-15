@@ -20,18 +20,21 @@ export const Index = () => {
     }
 
     const addNewCounter = (newCounter) => {
+        const newArray = [...FechasAMostrar,newCounter]
+        console.log(newArray)
+        setFechasAMostrar(newArray)
+        toggleModalVisibility()
     }
     
     const removeCounter = (index) => {
         const newArray = FechasAMostrar.filter((obj,pos) => pos !== index )
-
         setFechasAMostrar(newArray)
     }
     
-    // useEffect(()=> {
-    //     const timer = setInterval(() => setCurrentTime(Date.now() - 3600000),1000)
-    //     return () => clearInterval(timer);
-    // },[])    
+    useEffect(()=> {
+        const timer = setInterval(() => setCurrentTime(Date.now() - 3600000),1000)
+        return () => clearInterval(timer);
+    },[FechasAMostrar])    
 
     return (
         <>
@@ -41,15 +44,21 @@ export const Index = () => {
             {
                 FechasAMostrar.map( (current,index) => {
                     return (
-                        <RelojComponent relojData={current} time={currentTime} key={index} removeElement={removeCounter} index={index}/>
+                        <RelojComponent 
+                            relojData={current} 
+                            time={currentTime} 
+                            key={index} 
+                            removeElement={removeCounter} 
+                            index={index}
+                        />
                     )
                 }
             )
             }
             </div>
-            <button onClick={toggleModalVisibility}>Agregar</button>
+            <button onClick={toggleModalVisibility} className="btn btn-primary">Agregar</button>
         </div>
-        <ModalComponent visibility={visibility} toggle={toggleModalVisibility}/>
+        <ModalComponent visibility={visibility} toggle={toggleModalVisibility} newTimer={addNewCounter}/>
         </>
     )
 }
