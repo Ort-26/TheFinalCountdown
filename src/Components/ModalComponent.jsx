@@ -11,6 +11,10 @@ export default function ModalComponent({visibility,toggle,newTimer}) {
         setTitle(e.target.value)
     }
 
+    const handleClose = () => {
+        toggle()
+    }
+
     const submitNewTimer = () => {
         if (title.length === 0 ) {
             setInvalidTitle(true)
@@ -19,7 +23,7 @@ export default function ModalComponent({visibility,toggle,newTimer}) {
 
         const timer = {
             title,
-            targetDate: new Date(date)
+            targetDate: new Date(date).getTime()
         }
         newTimer(timer)
     }
@@ -29,8 +33,8 @@ export default function ModalComponent({visibility,toggle,newTimer}) {
     <div className="modal-dialog" role="document">
         <div className="modal-content">
         <div className="modal-header">
-            <h5 className="modal-title">Modal title</h5>
-            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={toggle}>
+            <h5 className="modal-title">Agregar contador nuevo</h5>
+            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={handleClose}>
             <span aria-hidden="true"></span>
             </button>
         </div>
@@ -62,7 +66,7 @@ export default function ModalComponent({visibility,toggle,newTimer}) {
         </div>
         <div className="modal-footer">
             <button type="button" className="btn btn-primary" onClick={submitNewTimer}>Agregar</button>
-            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={toggle}>Close</button>
+            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={handleClose}>Close</button>
         </div>
         </div>
     </div>
