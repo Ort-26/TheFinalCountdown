@@ -50,9 +50,13 @@ export const Index = () => {
     }
     
     const removeCounter = (index) => {
-        const newArray = FechasAMostrar.filter((obj,pos) => pos !== index )
-        setFechasAMostrar(newArray)
-        saveCounters(newArray)
+        if (window.confirm('¿Desea eliminar el contador?')) {
+            const newArray = FechasAMostrar.filter((obj,pos) => pos !== index )
+            setFechasAMostrar(newArray)
+            saveCounters(newArray)
+          } else {
+            // Do nothing!
+          }
     }
 
     const saveCounters = (newFechas) => {
@@ -61,6 +65,7 @@ export const Index = () => {
 
     const resetCounters = () => {
         localStorage.setItem(states.FechasAMostrar.toString(),JSON.stringify(DefaultDates))
+        setFechasAMostrar(JSON.parse(localStorage.getItem(states.FechasAMostrar)))
     }
 
     return (
