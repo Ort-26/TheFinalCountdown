@@ -28,7 +28,7 @@ const EndOfProject = {
 
 const NextSalida = {
     title: "Tiempo restante para salir",
-    targetDate: GetNextHoraSalida(today).getTime(),
+    targetDate: GetNextHoraSalida(today),
     EndMessage: DefaultEndMessage
 }
 const Aguinaldo = {
