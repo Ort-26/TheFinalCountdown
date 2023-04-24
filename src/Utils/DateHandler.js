@@ -53,7 +53,7 @@ export const GetNextQuincena = (actualDate) => { //Recibe un valor numerico y re
         } else if (actualDayNumber >= 15 ) {
             nextQuincena = new Date (actual.getFullYear()+'-'+actualMonth+'-30 03:00:00')
         } 
-        if (nextQuincena.getDay() === 6 ) {
+        if (nextQuincena.getDay() === 6 || nextQuincena.getDay() === 0 ) {
             if (actualDayNumber < nextQuincena.getDate() - 1) {
                 nextQuincena = new Date (actual.getFullYear()+'-'+actualMonth+'-'+(nextQuincena.getDate() - 1) + ' 03:00:00')
             } else {

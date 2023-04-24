@@ -14,17 +14,17 @@ const RelojUtilidades2023 = {
         EndMessage: DefaultEndMessage
     }
 
-const EndOfSprint = {
-    title: "Tiempo restante de sprint centro ***390",
-    targetDate: new Date ("2023-4-21 18:30:00").getTime(),
-    EndMessage: DefaultEndMessage
-}
+// const EndOfSprint = {
+//     title: "Tiempo restante de sprint centro ***390",
+//     targetDate: new Date ("2023-4-21 18:30:00").getTime(),
+//     EndMessage: DefaultEndMessage
+// }
 
-const EndOfProject = {
-    title: "Tiempo restante para entrega de proyecto",
-    targetDate: new Date ("2023-4-28 18:30:00").getTime(),
-    EndMessage: DefaultEndMessage
-}
+// const EndOfProject = {
+//     title: "Tiempo restante para entrega de proyecto",
+//     targetDate: new Date ("2023-4-28 18:30:00").getTime(),
+//     EndMessage: DefaultEndMessage
+// }
 
 const NextSalida = {
     title: "Tiempo restante para salir",
@@ -38,4 +38,4 @@ const Aguinaldo = {
 }
 
 
-export const FechasAMostrar = [RelojQuincena,NextSalida,RelojUtilidades2023,EndOfSprint,EndOfProject,Aguinaldo]
+export const FechasAMostrar = [RelojQuincena,NextSalida,RelojUtilidades2023,Aguinaldo]
