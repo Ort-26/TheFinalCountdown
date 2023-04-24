@@ -2,7 +2,7 @@ import { useState,useEffect } from 'react'
 import { HeaderComponent } from '../Components/HeaderComponent';
 import { RelojComponent } from '../Components/RelojComponent';
 import {FechasAMostrar as DefaultDates} from '../Data/Dates'
-import {today} from '../Data/Constants'
+import {today,adjustForDateDotNow} from '../Data/Constants'
 import ModalComponent from '../Components/ModalComponent';
 import YesNoModalComponent from '../Components/YesNoModalComponent';
 export const Index = () => {
@@ -21,7 +21,7 @@ export const Index = () => {
     },[states.FechasAMostrar])
 
     useEffect(()=> {
-        const timer = setInterval(() => setCurrentTime(Date.now() - 3600000),1000)
+        const timer = setInterval(() => setCurrentTime(Date.now() + adjustForDateDotNow),1000)
         return () => clearInterval(timer);
     },[FechasAMostrar])    
 
