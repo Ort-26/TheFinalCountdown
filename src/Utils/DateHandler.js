@@ -43,6 +43,31 @@ export const GetNextHoraSalida = (actualDate) => {
     return salida.getTime();
 }
 
+export const GetNextHoraSalidaAfluencias = (actualDate) => {
+    const actual = new Date(today);
+    const actualDayNumber = actual.getDate()
+    const actualMonth = actual.getMonth() + 1
+    const actualYear = actual.getFullYear()
+    let nextSalida = actual;
+    
+    //Verificar si es dia laboral
+    const laboral = [1,2,3,4,5]
+    // console.log(laboral.includes(nextSalida.getDay()));
+    if (!laboral.includes(nextSalida.getDay())) {
+        return actual;
+    }
+
+    //Verificar si es horario laboral
+    const entrada = new Date(actualYear + "-" + actualMonth + "-" + actualDayNumber + " 08:00:00")
+    const salida = new Date(actualYear + "-" + actualMonth + "-" + actualDayNumber + " 18:00:00")
+        
+    if (actual.getHours() < entrada.getHours() && actual.getHours() > salida.getHours()) {
+        return actual;
+    }
+
+    return salida.getTime();
+}
+
 export const GetNextQuincena = (actualDate) => { //Recibe un valor numerico y retorna un valor numerico
     let actual = new Date(today);
     const actualDayNumber = actual.getDate()
@@ -65,4 +90,9 @@ export const GetNextQuincena = (actualDate) => { //Recibe un valor numerico y re
         }
         actual = null;
     return nextQuincena.getTime();
+}
+
+export const GetNextFriday = () => {
+    let actual = new Date(today);
+    
 }

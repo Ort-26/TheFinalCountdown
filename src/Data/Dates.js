@@ -1,4 +1,4 @@
-import { GetNextQuincena,GetNextHoraSalida } from '../Utils/DateHandler';
+import { GetNextQuincena,GetNextHoraSalida, GetNextHoraSalidaAfluencias } from '../Utils/DateHandler';
 import {today} from './Constants'
 
 const DefaultEndMessage = "Completado"
@@ -31,6 +31,13 @@ const NextSalida = {
     targetDate: GetNextHoraSalida(today),
     EndMessage: DefaultEndMessage
 }
+
+const NextsalidaAfluencia = {
+    title: "Tiempo restante para salir (3 afluencias)",
+    targetDate: GetNextHoraSalidaAfluencias(today),
+    EndMessage: DefaultEndMessage
+}
+
 const Aguinaldo = {
     title: "Aguinaldo 2024",
     targetDate: new Date ("2024-11-15 03:00:00").getTime(),
@@ -38,4 +45,4 @@ const Aguinaldo = {
 }
 
 
-export const FechasAMostrar = [RelojQuincena,NextSalida,RelojUtilidades2023,Aguinaldo]
+export const FechasAMostrar = [RelojQuincena,NextSalida,NextsalidaAfluencia,RelojUtilidades2023,Aguinaldo]
