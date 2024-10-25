@@ -9,8 +9,8 @@ const RelojQuincena = {
     }
 
 const RelojUtilidades2023 = {
-        title: 'Utilidades 2024',
-        targetDate: new Date ("2024-5-15 03:00:00").getTime(),
+        title: 'Utilidades 2025',
+        targetDate: new Date ("2025-5-15 03:00:00").getTime(),
         EndMessage: DefaultEndMessage
     }
 
