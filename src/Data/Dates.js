@@ -39,8 +39,8 @@ const NextsalidaAfluencia = {
 }
 
 const Aguinaldo = {
-    title: "Aguinaldo 2024",
-    targetDate: new Date ("2024-11-29 03:00:00").getTime(),
+    title: "Aguinaldo 2025",
+    targetDate: new Date ("2025-11-28 03:00:00").getTime(),
     EndMessage: DefaultEndMessage
 }
 
