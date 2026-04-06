@@ -9,8 +9,8 @@ const RelojQuincena = {
     }
 
 const RelojUtilidades2023 = {
-        title: 'Utilidades 2025',
-        targetDate: new Date ("2025-5-15 03:00:00").getTime(),
+        title: 'Utilidades 2026',
+        targetDate: new Date ("2026-5-30 03:00:00").getTime(),
         EndMessage: DefaultEndMessage
     }
 
@@ -32,8 +32,8 @@ const NextSalida = {
     EndMessage: DefaultEndMessage
 }
 const Aguinaldo = {
-    title: "Aguinaldo 2024",
-    targetDate: new Date ("2024-11-15 03:00:00").getTime(),
+    title: "Aguinaldo 2026",
+    targetDate: new Date ("2026-11-15 03:00:00").getTime(),
     EndMessage: DefaultEndMessage
 }
 
